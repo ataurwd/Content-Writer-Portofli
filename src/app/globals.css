@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Fluent Neutrals - Light Theme */
+  --background: #faf9f8;
+  --foreground: #201f1e;
+  --surface-alt: #f3f2f1;
+  --surface-card: #ffffff;
+  
+  /* Fluent Accents - Blue */
+  --accent-primary: #0078d4;
+  --accent-hover: #106ebe;
+  --accent-pressed: #005a9e;
+
+  /* Elevation/Shadows */
+  --elevation-low: 0 1px 2px rgba(0,0,0,0.12), 0 0 2px rgba(0,0,0,0.12);
+  --elevation-med: 0 4px 8px rgba(0,0,0,0.14), 0 0 2px rgba(0,0,0,0.12);
+  --elevation-high: 0 8px 16px rgba(0,0,0,0.14), 0 0 2px rgba(0,0,0,0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Fluent Neutrals - Dark Theme */
+    --background: #11100f;
+    --foreground: #f3f2f1;
+    --surface-alt: #201f1e;
+    --surface-card: #292827;
+
+    /* Fluent Accents - Blue (Dark mode adjusted) */
+    --accent-primary: #2b88d8;
+    --accent-hover: #3a96dd;
+    --accent-pressed: #4ea0e1;
+
+    /* Elevation for dark theme */
+    --elevation-low: 0 1px 2px rgba(0,0,0,0.24), 0 0 2px rgba(0,0,0,0.24);
+    --elevation-med: 0 4px 8px rgba(0,0,0,0.28), 0 0 2px rgba(0,0,0,0.24);
+    --elevation-high: 0 8px 16px rgba(0,0,0,0.28), 0 0 2px rgba(0,0,0,0.24);
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-surface-alt: var(--surface-alt);
+  --color-surface-card: var(--surface-card);
+  --color-accent: var(--accent-primary);
+  --color-accent-hover: var(--accent-hover);
+  
+  --shadow-low: var(--elevation-low);
+  --shadow-med: var(--elevation-med);
+  --shadow-high: var(--elevation-high);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Inter, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fluent Acrylic (Glassmorphism) Utilities */
+@utility acrylic {
+  background-color: color-mix(in srgb, var(--surface-card) 70%, transparent);
+  backdrop-filter: blur(20px) saturate(125%);
+}
+
+@utility acrylic-alt {
+  background-color: color-mix(in srgb, var(--surface-alt) 70%, transparent);
+  backdrop-filter: blur(30px) saturate(150%);
 }
