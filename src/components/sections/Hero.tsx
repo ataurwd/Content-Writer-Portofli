@@ -6,7 +6,7 @@ import { Button } from '../ui/Button';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 lg:px-8 bg-background pt-20">
+    <section className="relative md:min-h-screen flex items-center justify-center overflow-hidden px-6 lg:px-8 bg-background md:pt-20 min-h-[70vh]">
       {/* Floating Clay Elements */}
       <motion.div 
         animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
@@ -49,7 +49,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex items-center justify-center gap-4"
         >
           <Button variant="primary" className="w-full sm:w-auto">Let's Talk Strategy</Button>
           <Button variant="clay" className="w-full sm:w-auto">View My Work</Button>
