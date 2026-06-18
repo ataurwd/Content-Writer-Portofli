@@ -1,70 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  /* Fluent Neutrals - Light Theme */
-  --background: #faf9f8;
-  --foreground: #201f1e;
-  --surface-alt: #f3f2f1;
-  --surface-card: #ffffff;
+  --background: #F5F7FB;
+  --foreground: #1E293B;
+  --foreground-secondary: #64748B;
+  --surface: #FFFFFF;
   
-  /* Fluent Accents - Blue */
-  --accent-primary: #0078d4;
-  --accent-hover: #106ebe;
-  --accent-pressed: #005a9e;
-
-  /* Elevation/Shadows */
-  --elevation-low: 0 1px 2px rgba(0,0,0,0.12), 0 0 2px rgba(0,0,0,0.12);
-  --elevation-med: 0 4px 8px rgba(0,0,0,0.14), 0 0 2px rgba(0,0,0,0.12);
-  --elevation-high: 0 8px 16px rgba(0,0,0,0.14), 0 0 2px rgba(0,0,0,0.12);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Fluent Neutrals - Dark Theme */
-    --background: #11100f;
-    --foreground: #f3f2f1;
-    --surface-alt: #201f1e;
-    --surface-card: #292827;
-
-    /* Fluent Accents - Blue (Dark mode adjusted) */
-    --accent-primary: #2b88d8;
-    --accent-hover: #3a96dd;
-    --accent-pressed: #4ea0e1;
-
-    /* Elevation for dark theme */
-    --elevation-low: 0 1px 2px rgba(0,0,0,0.24), 0 0 2px rgba(0,0,0,0.24);
-    --elevation-med: 0 4px 8px rgba(0,0,0,0.28), 0 0 2px rgba(0,0,0,0.24);
-    --elevation-high: 0 8px 16px rgba(0,0,0,0.28), 0 0 2px rgba(0,0,0,0.24);
-  }
+  --primary: #5B67F1;
+  --secondary: #8B5CF6;
+  --accent: #06B6D4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-surface-alt: var(--surface-alt);
-  --color-surface-card: var(--surface-card);
-  --color-accent: var(--accent-primary);
-  --color-accent-hover: var(--accent-hover);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-surface: var(--surface);
   
-  --shadow-low: var(--elevation-low);
-  --shadow-med: var(--elevation-med);
-  --shadow-high: var(--elevation-high);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+
+  --font-sans: var(--font-inter), sans-serif;
+  --font-heading: var(--font-space), sans-serif;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: 'Segoe UI', Inter, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  font-family: var(--font-sans);
 }
 
-/* Fluent Acrylic (Glassmorphism) Utilities */
-@utility acrylic {
-  background-color: color-mix(in srgb, var(--surface-card) 70%, transparent);
-  backdrop-filter: blur(20px) saturate(125%);
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
 
-@utility acrylic-alt {
-  background-color: color-mix(in srgb, var(--surface-alt) 70%, transparent);
-  backdrop-filter: blur(30px) saturate(150%);
+@utility clay-card {
+  background-color: var(--color-surface);
+  border-radius: 2rem;
+  box-shadow: 
+    10px 10px 20px #d1d5db, 
+    -10px -10px 20px #ffffff,
+    inset 4px 4px 8px rgba(255, 255, 255, 0.8), 
+    inset -4px -4px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+@utility clay-card-sm {
+  background-color: var(--color-surface);
+  border-radius: 1.5rem;
+  box-shadow: 
+    6px 6px 12px #d1d5db, 
+    -6px -6px 12px #ffffff,
+    inset 2px 2px 4px rgba(255, 255, 255, 0.8), 
+    inset -2px -2px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+@utility text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

@@ -6,7 +6,7 @@ import { testimonialsData } from '../../data/content';
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 px-6 lg:px-8 bg-surface-alt">
+    <section id="testimonials" className="py-24 px-6 lg:px-8 bg-background">
       <div className="mx-auto max-w-4xl text-center">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -24,12 +24,16 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="acrylic p-8 rounded-xl shadow-low text-left border border-white/10"
+              className="clay-card p-8 text-left relative"
             >
-              <p className="text-foreground/80 italic mb-6">"{test.quote}"</p>
+              {/* Decorative quotation mark */}
+              <div className="absolute -top-4 -left-4 w-12 h-12 clay-card-sm flex items-center justify-center bg-primary text-white text-2xl font-serif">
+                "
+              </div>
+              <p className="text-foreground-secondary italic mb-6 mt-2">"{test.quote}"</p>
               <div>
-                <p className="font-semibold text-foreground">{test.name}</p>
-                <p className="text-sm text-accent">{test.role}</p>
+                <p className="font-bold text-foreground">{test.name}</p>
+                <p className="text-sm font-semibold text-accent">{test.role}</p>
               </div>
             </motion.div>
           ))}

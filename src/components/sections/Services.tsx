@@ -22,7 +22,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-lg text-foreground/70"
+            className="mt-4 text-lg text-foreground-secondary"
           >
             Strategic solutions designed to elevate your brand's digital presence.
           </motion.p>
@@ -35,11 +35,13 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              className="bg-surface-card p-6 rounded-lg shadow-low hover:shadow-med transition-shadow duration-300 border border-black/5 dark:border-white/5 cursor-pointer"
+              whileHover={{ y: -5 }}
+              className="clay-card-sm p-8 flex flex-col justify-between"
             >
-              <h3 className="text-xl font-semibold mb-3 text-accent">{service.title}</h3>
-              <p className="text-foreground/80 leading-relaxed text-sm">{service.description}</p>
+              <div>
+                <h3 className="text-xl font-bold mb-3 text-primary">{service.title}</h3>
+                <p className="text-foreground-secondary leading-relaxed text-sm">{service.description}</p>
+              </div>
             </motion.div>
           ))}
         </div>
