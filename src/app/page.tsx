@@ -1,9 +1,11 @@
 import { Hero } from "@/components/sections/Hero";
 import { StatsCounter } from "@/components/sections/StatsCounter";
 import { About } from "@/components/sections/About";
-import { Services } from "@/components/sections/Services";
-import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
 import { CaseStudies } from "@/components/sections/CaseStudies";
+import { WordPressSaaS } from "@/components/sections/WordPressSaaS";
+import { TechDoc } from "@/components/sections/TechDoc";
+import { AIWorkflow } from "@/components/sections/AIWorkflow";
+import { Skills } from "@/components/sections/Skills";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
@@ -14,9 +16,11 @@ export default function Home() {
       <Hero />
       <StatsCounter />
       <About />
-      <Services />
-      <ExperienceTimeline />
       <CaseStudies />
+      <WordPressSaaS />
+      <TechDoc />
+      <AIWorkflow />
+      <Skills />
       <Testimonials />
       <Contact />
       <Footer />

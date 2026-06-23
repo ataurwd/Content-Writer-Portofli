@@ -1,23 +1,34 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { Button } from './Button';
 
 export function Navbar() {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() || 0;
     if (latest > previous && latest > 150) {
       setHidden(true);
+      setIsOpen(false); // Close mobile menu if scrolling down
     } else {
       setHidden(false);
     }
     setScrolled(latest > 50);
   });
+
+  const navLinks = [
+    { label: "About", href: "#about" },
+    { label: "Works", href: "#featured-work" },
+    { label: "Plugins", href: "#wordpress-saas" },
+    { label: "Docs", href: "#tech-doc" },
+    { label: "AI Flow", href: "#ai-workflow" },
+    { label: "Skills", href: "#skills" },
+  ];
 
   return (
     <motion.header
@@ -27,29 +38,82 @@ export function Navbar() {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'py-4' : 'py-6'}`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'py-3' : 'py-5'}`}
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className={`flex items-center justify-between rounded-[2rem] px-6 py-3 transition-all duration-300 ${scrolled ? 'clay-card-sm bg-surface/80 backdrop-blur-md' : 'bg-transparent'}`}>
-          <a href="#" className="text-2xl font-bold text-foreground">
-            C<span className="text-primary">.</span>Strategist
+        <div className={`flex items-center justify-between rounded-2xl px-6 py-3 transition-all duration-300 ${scrolled ? 'glass-panel bg-white/70 backdrop-blur-md' : 'bg-transparent border border-transparent'}`}>
+          <a href="#" className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+            Yousuf<span className="text-primary">.</span>Ali
           </a>
-          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-foreground-secondary">
-            <a href="#about" className="hover:text-primary transition-colors">About</a>
-            <a href="#services" className="hover:text-primary transition-colors">Services</a>
-            <a href="#portfolio" className="hover:text-primary transition-colors">Portfolio</a>
+          
+          <nav className="hidden lg:flex items-center gap-6 text-sm font-semibold text-foreground-secondary">
+            {navLinks.map((link) => (
+              <a 
+                key={link.label} 
+                href={link.href} 
+                className="hover:text-primary transition-colors py-1 relative group"
+              >
+                {link.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full rounded-full" />
+              </a>
+            ))}
           </nav>
-          <div className="hidden md:block">
-             <Button variant="primary" className="!px-6 !py-2 !text-sm">Hire Me</Button>
+          
+          <div className="hidden lg:block">
+            <a href="#contact">
+              <Button variant="primary" className="!px-5 !py-2 !text-xs uppercase tracking-wider !rounded-lg">
+                Let's Talk
+              </Button>
+            </a>
           </div>
-          {/* Mobile Menu Button placeholder */}
-          <button className="md:hidden text-foreground">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 12H20M4 6H20M4 18H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden text-foreground p-1.5 rounded-lg border border-black/5 flex items-center justify-center cursor-pointer bg-white/50"
+            aria-label="Toggle menu"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {isOpen ? (
+                <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              ) : (
+                <path d="M4 12H20M4 6H20M4 18H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              )}
             </svg>
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-full left-0 w-full px-6 pt-2 pb-6 z-40 lg:hidden"
+          >
+            <div className="glass-panel bg-white/90 backdrop-blur-xl p-6 flex flex-col gap-3 text-center">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.label} 
+                  href={link.href} 
+                  onClick={() => setIsOpen(false)}
+                  className="text-sm font-semibold text-foreground hover:text-primary transition-colors py-2 block border-b border-black/5 last:border-0"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a href="#contact" onClick={() => setIsOpen(false)} className="mt-2">
+                <Button variant="primary" className="w-full !rounded-lg">
+                  Hire Me
+                </Button>
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

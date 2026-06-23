@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { statsData } from '../../data/content';
 
 function AnimatedCounter({ end, duration = 2, prefix = "", suffix = "" }: { end: number, duration?: number, prefix?: string, suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -29,29 +30,22 @@ function AnimatedCounter({ end, duration = 2, prefix = "", suffix = "" }: { end:
 }
 
 export function StatsCounter() {
-  const stats = [
-    { value: 5, prefix: "", suffix: "+", label: "Years Experience" },
-    { value: 150, prefix: "", suffix: "+", label: "Articles Published" },
-    { value: 5, prefix: "$", suffix: "M+", label: "Revenue Generated" },
-    { value: 32, prefix: "", suffix: "%", label: "Avg CTR Increase" }
-  ];
-
   return (
-    <section className="md:py-12 px-6 lg:px-8 bg-background relative z-20 -mt-10">
+    <section className="relative py-12 px-6 lg:px-8 z-20 -mt-16 sm:-mt-24">
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-        {stats.map((stat, idx) => (
+        {statsData.map((stat, idx) => (
           <motion.div 
             key={idx}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-            className="clay-card-sm p-6 text-center flex flex-col items-center justify-center"
+            transition={{ delay: idx * 0.1, duration: 0.5 }}
+            className="glass-panel glass-panel-hover p-6 text-center flex flex-col items-center justify-center bg-white/60"
           >
-            <div className="text-4xl font-extrabold text-primary mb-2">
-              <AnimatedCounter end={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
+            <div className="text-4xl md:text-5xl font-black text-primary mb-2 tracking-tight">
+              <AnimatedCounter end={stat.value} suffix={stat.suffix} />
             </div>
-            <div className="text-sm font-medium text-foreground-secondary">{stat.label}</div>
+            <div className="text-xs md:text-sm font-extrabold text-foreground-secondary uppercase tracking-wider">{stat.label}</div>
           </motion.div>
         ))}
       </div>

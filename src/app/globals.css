@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F5F7FB;
-  --foreground: #1E293B;
-  --foreground-secondary: #64748B;
+  --background: #FAFAFC;
+  --foreground: #0F172A;
+  --foreground-secondary: #475569;
   --surface: #FFFFFF;
   
   --primary: #5B67F1;
-  --secondary: #8B5CF6;
-  --accent: #06B6D4;
+  --secondary: #6366F1;
+  --accent: #0D9488;
 }
 
 @theme inline {
@@ -27,40 +27,138 @@
 
 body {
   background-color: var(--background);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(91, 103, 241, 0.04) 0px, transparent 35%),
+    radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.04) 0px, transparent 35%),
+    radial-gradient(at 50% 100%, rgba(13, 148, 136, 0.03) 0px, transparent 40%);
+  background-attachment: fixed;
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+  letter-spacing: -0.03em;
 }
 
-@utility clay-card {
-  background-color: var(--color-surface);
-  border-radius: 2rem;
+/* Background grid blueprints */
+@utility bg-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.015) 1px, transparent 1px);
+}
+
+/* Minimalist Glassmorphism card panels */
+@utility glass-panel {
+  background-color: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.06);
   box-shadow: 
-    10px 10px 20px #d1d5db, 
-    -10px -10px 20px #ffffff,
-    inset 4px 4px 8px rgba(255, 255, 255, 0.8), 
-    inset -4px -4px 8px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+    0 4px 20px rgba(15, 23, 42, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.01);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@utility clay-card-sm {
-  background-color: var(--color-surface);
-  border-radius: 1.5rem;
-  box-shadow: 
-    6px 6px 12px #d1d5db, 
-    -6px -6px 12px #ffffff,
-    inset 2px 2px 4px rgba(255, 255, 255, 0.8), 
-    inset -2px -2px 4px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+/* Glass panel interactive lift */
+@utility glass-panel-hover {
+  &:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(15, 23, 42, 0.12);
+    box-shadow: 
+      0 12px 32px rgba(15, 23, 42, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
 }
 
+/* Minimalist buttons */
+@utility minimal-btn {
+  background: var(--color-foreground);
+  color: var(--color-surface);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    transform: translateY(-1px);
+    background: #1e293b;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+  }
+}
+
+@utility minimal-btn-secondary {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--color-foreground);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(15, 23, 42, 0.16);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+/* Text Gradient */
 @utility text-gradient {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@utility animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+@utility animate-float-medium {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.1);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.2);
 }
