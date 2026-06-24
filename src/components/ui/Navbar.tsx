@@ -22,12 +22,12 @@ export function Navbar() {
   });
 
   const navLinks = [
+    { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
-    { label: "Works", href: "#featured-work" },
-    { label: "Plugins", href: "#wordpress-saas" },
-    { label: "Docs", href: "#tech-doc" },
-    { label: "AI Flow", href: "#ai-workflow" },
-    { label: "Skills", href: "#skills" },
+    { label: "Services", href: "#skills" },
+    { label: "Case Studies", href: "#featured-work" },
+    { label: "Process", href: "#ai-workflow" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
@@ -40,18 +40,18 @@ export function Navbar() {
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'py-3' : 'py-5'}`}
     >
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className={`flex items-center justify-between rounded-2xl px-6 py-3 transition-all duration-300 ${scrolled ? 'glass-panel bg-white/70 backdrop-blur-md' : 'bg-transparent border border-transparent'}`}>
-          <a href="#" className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
-            Yousuf<span className="text-primary">.</span>Ali
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`flex items-center justify-between rounded-2xl px-6 py-3 transition-all duration-300 ${scrolled ? 'bg-surface/90 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-transparent border border-transparent'}`}>
+          <a href="#" className="text-xl sm:text-2xl font-black text-foreground tracking-tight uppercase">
+            YOUSUF<span className="text-primary">.</span>ALI
           </a>
           
           <nav className="hidden lg:flex items-center gap-6 text-sm font-semibold text-foreground-secondary">
             {navLinks.map((link) => (
-              <a 
+               <a 
                 key={link.label} 
                 href={link.href} 
-                className="hover:text-primary transition-colors py-1 relative group"
+                className="hover:text-foreground transition-colors py-1 relative group"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full rounded-full" />
@@ -61,8 +61,8 @@ export function Navbar() {
           
           <div className="hidden lg:block">
             <a href="#contact">
-              <Button variant="primary" className="!px-5 !py-2 !text-xs uppercase tracking-wider !rounded-lg">
-                Let's Talk
+              <Button variant="primary" className="!px-5 !py-2.5 !text-xs uppercase font-bold tracking-wider !rounded-lg hover:shadow-lg hover:shadow-primary/20">
+                Hire Me
               </Button>
             </a>
           </div>
@@ -70,7 +70,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-foreground p-1.5 rounded-lg border border-black/5 flex items-center justify-center cursor-pointer bg-white/50"
+            className="lg:hidden text-foreground p-2 rounded-lg border border-white/10 flex items-center justify-center cursor-pointer bg-surface/50 hover:bg-surface transition-colors"
             aria-label="Toggle menu"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,21 +92,21 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 w-full px-6 pt-2 pb-6 z-40 lg:hidden"
+            className="absolute top-full left-0 w-full px-4 sm:px-6 pt-2 pb-6 z-40 lg:hidden"
           >
-            <div className="glass-panel bg-white/90 backdrop-blur-xl p-6 flex flex-col gap-3 text-center">
+            <div className="bg-surface/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 flex flex-col gap-3 text-center shadow-2xl">
               {navLinks.map((link) => (
                 <a 
                   key={link.label} 
                   href={link.href} 
                   onClick={() => setIsOpen(false)}
-                  className="text-sm font-semibold text-foreground hover:text-primary transition-colors py-2 block border-b border-black/5 last:border-0"
+                  className="text-sm font-bold text-foreground-secondary hover:text-foreground transition-colors py-3 block border-b border-white/5 last:border-0"
                 >
                   {link.label}
                 </a>
               ))}
-              <a href="#contact" onClick={() => setIsOpen(false)} className="mt-2">
-                <Button variant="primary" className="w-full !rounded-lg">
+              <a href="#contact" onClick={() => setIsOpen(false)} className="mt-4">
+                <Button variant="primary" className="w-full !rounded-xl !py-3.5 uppercase tracking-wider font-bold">
                   Hire Me
                 </Button>
               </a>

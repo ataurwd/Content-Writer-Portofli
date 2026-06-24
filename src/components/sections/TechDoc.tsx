@@ -13,7 +13,7 @@ export function TechDoc() {
   const getFileIcon = (topic: string) => {
     if (topic.includes("Setup") || topic.includes("Configuration")) {
       return (
-        <svg className="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+        <svg className="w-4 h-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
           <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
@@ -28,7 +28,7 @@ export function TechDoc() {
     }
     // Standard User Guides
     return (
-      <svg className="w-4 h-4 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+      <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
       </svg>
     );
@@ -37,32 +37,32 @@ export function TechDoc() {
   return (
     <section id="tech-doc" className="py-24 px-6 lg:px-8 bg-background relative overflow-hidden">
       
-      <div className="absolute top-1/2 right-0 w-80 h-80 rounded-full bg-accent/2 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-64 h-64 rounded-full bg-primary/2 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-80 h-80 rounded-full bg-accent/10 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-64 h-64 rounded-full bg-primary/10 blur-[100px] pointer-events-none" />
 
       <div className="mx-auto max-w-5xl z-10 relative">
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="text-xs font-black uppercase text-accent tracking-widest px-3.5 py-1.5 rounded-lg border border-black/5 bg-white select-none">
+          <span className="text-xs font-black uppercase text-accent tracking-widest px-4 py-2 rounded-full border border-accent/20 bg-accent/5 select-none inline-block">
             Technical Documentation
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black text-foreground mt-4 tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-black text-foreground mt-6 tracking-tight uppercase">
             User Guides & Technical Manuals
           </h2>
-          <p className="text-sm font-semibold text-foreground-secondary mt-3 max-w-xl mx-auto">
+          <p className="text-sm font-medium text-foreground-secondary mt-4 max-w-xl mx-auto">
             Step-by-step setup documents and widget configurations created to reduce support tickets and accelerate onboarding.
           </p>
-          <div className="h-1.5 w-16 bg-accent/20 rounded-full mt-4 mx-auto" />
+          <div className="h-1 w-20 bg-accent/30 rounded-full mt-6 mx-auto" />
         </div>
 
         {/* Directory Explorer Card */}
-        <div className="glass-panel overflow-hidden grid grid-cols-1 md:grid-cols-12 min-h-[400px] bg-white/40">
+        <div className="glass-panel overflow-hidden grid grid-cols-1 md:grid-cols-12 min-h-[400px] bg-surface/30 border border-white/10 shadow-2xl">
           
           {/* Left panel: Plugins Directory tree */}
-          <div className="md:col-span-4 bg-white/20 border-b md:border-b-0 md:border-r border-black/5 p-6 space-y-4">
-            <h3 className="text-[10px] font-black uppercase tracking-wider text-slate-500 mb-4 flex items-center gap-2">
-              <svg className="w-4 h-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+          <div className="md:col-span-4 bg-surface/50 border-b md:border-b-0 md:border-r border-white/10 p-6 space-y-4">
+            <h3 className="text-[10px] font-black uppercase tracking-wider text-foreground-secondary mb-4 flex items-center gap-2">
+              <svg className="w-4 h-4 text-foreground-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
               </svg>
               Products Directory
@@ -75,14 +75,14 @@ export function TechDoc() {
                   <button
                     key={doc.pluginName}
                     onClick={() => setSelectedPlugin(doc.pluginName)}
-                    className={`w-full text-left px-4 py-2.5 rounded-lg font-bold text-xs flex items-center justify-between cursor-pointer transition-all duration-200 ${
+                    className={`w-full text-left px-4 py-2.5 rounded-xl font-bold text-xs flex items-center justify-between cursor-pointer transition-all duration-200 ${
                       isSelected 
-                        ? 'bg-slate-900 text-white shadow-sm' 
-                        : 'hover:bg-white/60 text-foreground-secondary hover:text-foreground'
+                        ? 'bg-primary text-white shadow-md' 
+                        : 'hover:bg-surface text-foreground-secondary hover:text-foreground'
                     }`}
                   >
                     <span className="flex items-center gap-2">
-                      <span className={`w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-primary' : 'bg-foreground-secondary/40'}`} />
+                      <span className={`w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-white' : 'bg-foreground-secondary/40'}`} />
                       {doc.pluginName}
                     </span>
                     <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${isSelected ? 'translate-x-0.5' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -97,11 +97,11 @@ export function TechDoc() {
           {/* Right panel: File node details list */}
           <div className="md:col-span-8 p-6 md:p-8 flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="flex items-center justify-between pb-4 border-b border-black/5">
+              <div className="flex items-center justify-between pb-4 border-b border-white/5">
                 <h4 className="text-[10px] font-black uppercase text-foreground-secondary tracking-widest">
                   Documentation Files ({currentDocItem?.topics.length || 0})
                 </h4>
-                <span className="text-[9px] font-black text-accent uppercase tracking-widest">
+                <span className="text-[9px] font-black text-accent uppercase tracking-widest bg-accent/10 px-2 py-1 rounded-md border border-accent/20">
                   Format: Step-by-Step
                 </span>
               </div>
@@ -113,7 +113,7 @@ export function TechDoc() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -5 }}
                   transition={{ duration: 0.2 }}
-                  className="space-y-2.5"
+                  className="space-y-3"
                 >
                   {currentDocItem?.topics.map((topic, index) => (
                     <motion.div
@@ -121,21 +121,21 @@ export function TechDoc() {
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.04 }}
-                      className="p-3.5 rounded-xl bg-white/80 border border-black/5 hover:border-accent/40 duration-200 transition-all flex items-center justify-between shadow-sm"
+                      className="p-4 rounded-xl bg-surface/80 border border-white/5 hover:border-accent/40 hover:bg-surface duration-200 transition-all flex items-center justify-between shadow-sm"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg border border-black/5 bg-slate-50 flex items-center justify-center shadow-inner">
+                        <div className="w-10 h-10 rounded-xl border border-white/5 bg-background flex items-center justify-center shadow-inner">
                           {getFileIcon(topic)}
                         </div>
                         <div>
-                          <p className="text-xs sm:text-sm font-bold text-foreground">{topic}</p>
-                          <p className="text-[9px] font-semibold text-slate-400">
-                            docs/{selectedPlugin.toLowerCase().replace(" ", "-")}/{topic.toLowerCase().replace(" ", "-")}.md
+                          <p className="text-sm font-bold text-foreground">{topic}</p>
+                          <p className="text-[10px] font-semibold text-foreground-secondary mt-0.5">
+                            docs/{selectedPlugin.toLowerCase().replace(" ", "-")}/{topic.toLowerCase().replace(/ /g, "-")}.md
                           </p>
                         </div>
                       </div>
 
-                      <span className="text-[9px] font-black uppercase text-emerald-600 bg-emerald-500/5 border border-emerald-500/10 px-2 py-0.5 rounded-lg select-none">
+                      <span className="text-[9px] font-black uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-lg select-none">
                         Active
                       </span>
                     </motion.div>
@@ -145,7 +145,7 @@ export function TechDoc() {
             </div>
             
             {/* Footer note of directory */}
-            <div className="pt-6 mt-6 border-t border-black/5 text-[10px] font-semibold text-foreground-secondary flex flex-wrap items-center justify-between gap-4">
+            <div className="pt-6 mt-6 border-t border-white/5 text-[10px] font-semibold text-foreground-secondary flex flex-wrap items-center justify-between gap-4">
               <span>All documents have been validated through ShapedPlugin LLC customer review panels.</span>
               <span className="text-primary font-black uppercase tracking-wider">HTML & Markdown Outputs</span>
             </div>

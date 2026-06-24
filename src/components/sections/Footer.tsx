@@ -1,28 +1,24 @@
+"use client";
+
 import React from 'react';
-import { contactDetails } from '../../data/content';
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="py-12 px-6 text-center bg-white/40 border-t border-black/5 backdrop-blur-md">
-      <div className="mx-auto max-w-6xl flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="text-left">
-          <p className="text-lg font-black text-foreground">
-            Yousuf<span className="text-primary">.</span>Ali
-          </p>
-          <p className="text-xs font-bold text-foreground-secondary mt-1">
-            Copywriter • Technical Writer • SEO Blogger • AI Specialist
-          </p>
-        </div>
+    <footer className="py-8 px-6 lg:px-8 border-t border-white/5 bg-background">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         
-        <p className="text-xs font-black text-foreground-secondary order-last md:order-none">
-          © {new Date().getFullYear()} Yousuf Ali. All rights reserved.
-        </p>
-        
-        <div className="flex gap-5 text-xs font-black text-foreground-secondary">
-          <a href={contactDetails.linkedin} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
-          <a href={contactDetails.fiverr} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">Fiverr</a>
-          <a href={contactDetails.portfolio} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">Portfolio</a>
+        <div className="flex items-center gap-2">
+          <span className="text-xl font-black text-foreground tracking-tight uppercase">
+            YOUSUF<span className="text-primary">.</span>ALI
+          </span>
         </div>
+
+        <div className="text-sm font-medium text-foreground-secondary text-center md:text-left">
+          &copy; {currentYear} Yousuf Ali. All rights reserved.
+        </div>
+
       </div>
     </footer>
   );
