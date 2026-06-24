@@ -50,16 +50,16 @@ export function CaseStudies() {
         </div>
 
         {/* Tab Filters (Segmented Control style) */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10 max-w-4xl mx-auto p-1.5 rounded-xl border border-black/5 bg-white/40 backdrop-blur-md">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10 w-fit mx-auto p-1.5 rounded-2xl border border-black/5 bg-white/40 backdrop-blur-md shadow-sm">
           {featuredWork.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 text-xs font-bold rounded-lg cursor-pointer transition-all duration-200 ${
+                className={`px-5 py-2.5 text-xs font-bold rounded-xl cursor-pointer transition-all duration-200 ${
                   isActive 
-                    ? 'bg-slate-900 text-white shadow-sm' 
+                    ? 'bg-slate-900 text-white shadow-md' 
                     : 'text-foreground-secondary hover:text-foreground hover:bg-white/50'
                 }`}
               >
@@ -70,9 +70,9 @@ export function CaseStudies() {
           {/* AI Workflow Tab */}
           <button
             onClick={() => setActiveTab('ai-workflow')}
-            className={`px-4 py-2 text-xs font-bold rounded-lg cursor-pointer transition-all duration-200 ${
+            className={`px-5 py-2.5 text-xs font-bold rounded-xl cursor-pointer transition-all duration-200 ${
               activeTab === 'ai-workflow' 
-                ? 'bg-slate-900 text-white shadow-sm' 
+                ? 'bg-slate-900 text-white shadow-md' 
                 : 'text-foreground-secondary hover:text-foreground hover:bg-white/50'
             }`}
           >

@@ -57,206 +57,191 @@ export interface ContactInfo {
 export const heroData = {
   name: "Yousuf Ali",
   taglines: [
-    "AI Content Specialist"
+    "AI Content Specialist",
+    "Technical Writer",
+    "Blogger",
+    "SEO & Marketing Strategist"
   ],
-  description: "I create clear, structured, and conversion-focused content for SaaS, WordPress, and eCommerce products.",
+  description: "Specialized in Copywriting (5+), AI Driven Content Writing & Training (3+), Blogging (2+), and Technical Writing (1+), creating high-impact content that drives engagement, strengthens brands, and supports business growth.",
   highlights: [
     "5+ years of experience",
     "125+ Fiverr reviews",
-    "50+ global clients",
+    "50+ Satisfied global clients",
     "WordPress & WooCommerce content specialist"
   ]
 };
 
 export const aboutData = {
-  intro: "I am a content writer specializing in SEO blogging, copywriting, and technical documentation.",
-  story1: "I started my career on Fiverr, working with 50+ international clients and earning 125+ five-star reviews through consistent delivery of high-quality content.",
-  story2: "Currently, I work at ShapedPlugin LLC, where I write blogs, documentation, and product-focused content for WordPress plugins.",
-  story3: "I also use AI tools to support content creation, improve structure, and enhance quality through human review and refinement."
+  intro: "Turning Content Into Revenue",
+  story1: "Hi, I'm Mohammad Yousuf Ali, an AI Content Trainer, Copywriter, and Technical Writer with 5+ years of experience creating SEO-driven content, product documentation, and marketing copy for E-Commerce, WordPress, and SaaS businesses.",
+  story2: "I specialize in transforming content ideas into clear, structured copy that educates users, improves decision-making, and drives measurable business growth while strengthening brand positioning.",
+  story3: ""
 };
 
 export const statsData = [
   { value: 5, suffix: "+", label: "Years Experience" },
   { value: 125, suffix: "+", label: "Fiverr Reviews" },
   { value: 50, suffix: "+", label: "Global Clients" },
-  { value: 5, suffix: "", label: "Featured Plugins" }
+  { value: 3, suffix: "+", label: "Years AI Content" }
 ];
 
 export const experienceHighlights: Highlight[] = [
-  { metric: "5+ Years", label: "Copywriting Experience", description: "Crafting highly structured, conversion-driven copy for digital storefronts and SaaS landing pages." },
-  { metric: "125+", label: "Five-Star Fiverr Reviews", description: "Delivering top-tier client satisfaction with a perfect track record of communication and quality." },
-  { metric: "50+", label: "International Clients", description: "Collaborating globally to help brands communicate their products to diverse user bases." },
-  { metric: "1+ Year", label: "at ShapedPlugin LLC", description: "Designing SEO structures, plugin manuals, and blog content for leading WordPress tools." },
-  { metric: "2 Years", label: "AI-Assisted Workflow", description: "Blending artificial intelligence speed with meticulous human copywriting and editing." },
-  { metric: "Multi-Store", label: "E-commerce Experience", description: "Optimizing listings and descriptions across Shopify, WooCommerce, Etsy, and Amazon." }
+  { metric: "Foundation", label: "Copywriting", description: "Built core expertise in SEO content writing, blogging, and marketing copy focused on clarity, engagement, and conversion." },
+  { metric: "Global", label: "Freelance Clients", description: "Expanded into international markets through Fiverr and direct clients, delivering website copy, SEO product descriptions, and eCommerce content." },
+  { metric: "Expansion", label: "Technical Writing", description: "Developed structured documentation systems for SaaS and WordPress products with a focus on usability and clarity." },
+  { metric: "1+ Year", label: "WordPress & SaaS", description: "Worked on WordPress plugin content systems at ShapedPlugin LLC for products like Smart Post, Smart Tabs, and WooGallery." },
+  { metric: "3+ Years", label: "AI Content Integration", description: "Integrated AI tools into content workflows for ideation, structuring, and optimization while maintaining human editorial control." },
+  { metric: "Multi-Store", label: "E-commerce Experience", description: "Shopify, WooCommerce, Etsy, and Amazon listing optimization experience for clarity and conversion." }
 ];
 
 export const featuredWork: FeaturedProject[] = [
   {
-    id: "fiverr",
-    category: "Fiverr Projects",
-    title: "Global E-commerce Copywriting",
-    description: "SEO product descriptions, website copy, and high-impact eCommerce content tailored for international clients."
+    id: "freelance",
+    category: "Freelance Content Work",
+    title: "Global Client Solutions",
+    description: "SEO product descriptions, landing pages, and website copy for global eCommerce clients."
   },
   {
     id: "ecommerce",
-    category: "E-commerce Projects",
-    title: "Store Optimization",
-    description: "Shopify and WooCommerce product pages, Etsy descriptions, and Amazon SEO content aimed at maximizing sales."
+    category: "E-commerce Content Systems",
+    title: "Platform Optimization",
+    description: "Shopify, WooCommerce, Etsy, and Amazon product listings optimized for clarity and conversion."
   },
   {
     id: "wordpress-saas",
     category: "WordPress & SaaS Content",
-    title: "Plugin & Software Blogging",
-    description: "Blog articles and educational content focusing on WordPress plugins, explaining complex tech in accessible ways."
-  },
-  {
-    id: "tech-doc",
-    category: "Technical Documentation",
-    title: "Guides & Manuals",
-    description: "Step-by-step installation guides, feature documentations, and troubleshooting manuals for plugin users."
+    title: "Structured Plugin Content",
+    description: "Feature pages, SEO blog articles, user guides, and educational content for WordPress plugins."
   }
 ];
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "fiverr-success",
-    title: "Fiverr Success Story",
-    category: "Fiverr Projects",
-    challenge: "eCommerce clients struggled with vague website copy that led to high bounce rates and low customer trust.",
-    solution: "Delivered conversion-focused SEO product descriptions and clear, structured copy targeted at user search intent.",
-    results: "Significantly improved search engine visibility and drove higher conversion rates across multiple customer storefronts."
-  },
-  {
-    id: "ecommerce-content",
-    title: "E-commerce Content Project",
+    id: "ecommerce-copywriting",
+    title: "eCommerce Copywriting",
     category: "E-commerce",
-    challenge: "Shopify and WooCommerce store owners faced low conversion rates on high-traffic product landing pages.",
-    solution: "Created engaging, benefit-driven product listings addressing customer pain points, with optimized calls-to-action.",
-    results: "Boosted add-to-cart rates and customer time-on-page through clear layout formatting and persuasive messaging."
+    challenge: "Product listings lacked clarity, leading to poor customer engagement.",
+    solution: "Structured SEO-driven product descriptions and landing pages.",
+    results: "Improved product clarity and engagement, driving conversions."
   },
   {
-    id: "wordpress-blog",
-    title: "WordPress Blog Content Project",
-    category: "WordPress & SaaS",
-    challenge: "Users found technical terms in plugin descriptions confusing, leading to support ticket overload.",
-    solution: "Wrote easy-to-read, SEO-optimized blog articles explaining plugin functionalities, use cases, and feature benefits.",
-    results: "Increased organic blog traffic and equipped users with self-help guides, reducing routine support queries."
-  },
-  {
-    id: "documentation",
-    title: "Documentation Project",
+    id: "wordpress-doc",
+    title: "WordPress Documentation System",
     category: "Technical Documentation",
-    challenge: "Users abandoned plugin installations midway due to complex and disorganized configuration manuals.",
-    solution: "Developed structured, step-by-step setup guides with clear heading hierarchies, visual highlights, and troubleshooting FAQs.",
-    results: "Vastly improved onboarding usability, resulting in higher product adoption rates and lower churn rates."
+    challenge: "Complex plugin configurations caused user confusion.",
+    solution: "Created scalable documentation frameworks for multiple plugins.",
+    results: "Improved usability and significantly reduced user confusion."
+  },
+  {
+    id: "saas-content",
+    title: "SaaS Content Strategy",
+    category: "WordPress & SaaS",
+    challenge: "End users struggled to understand complex plugin features.",
+    solution: "Developed SEO-focused educational content and feature guides.",
+    results: "Simplified complex plugin features, educating the user base effectively."
   },
   {
     id: "ai-workflow",
-    title: "AI Workflow Project",
-    category: "AI Content & Workflow",
-    challenge: "Faced tight deadlines requiring large volumes of educational articles without sacrificing tone and accuracy.",
-    solution: "Engineered a custom AI-assisted content pipeline for brainstorming, drafting, and prompt optimization, with strict human review and editing.",
-    results: "Cut content production cycles by 50% while maintaining flawless quality and highly authentic brand messaging."
+    title: "AI-Assisted Content Workflow",
+    category: "AI Content",
+    challenge: "Needed to scale content production without sacrificing quality.",
+    solution: "Implemented AI tools for ideation, structuring, and optimization with human review.",
+    results: "Improved speed and structure while maintaining full quality control."
   }
 ];
 
 export const wordpressSaaSPlugins: PluginWork[] = [
   {
     name: "Smart Post",
-    description: "Advanced post grid, list, and carousel plugin for displaying articles dynamically in Gutenberg, Elementor, and more.",
-    creations: ["SEO blog articles", "Feature-focused content", "Educational guides", "User-focused explanations"]
+    description: "WordPress plugin for dynamic post grids and lists.",
+    creations: ["Feature documentation", "User guides", "SEO blog articles"]
   },
   {
     name: "Smart Tabs",
-    description: "Responsive tab creation tool designed for organizing complex site information in tab layouts.",
-    creations: ["SEO blog articles", "Feature-focused content", "Educational guides", "User-focused explanations"]
+    description: "Responsive tab creation tool for WordPress.",
+    creations: ["Feature documentation", "User guides", "SEO blog articles"]
   },
   {
     name: "Easy Accordion",
-    description: "The best accordion slider builder to group complex FAQs, services, and queries in collapsible cards.",
-    creations: ["SEO blog articles", "Feature-focused content", "Educational guides", "User-focused explanations"]
+    description: "Accordion slider builder for FAQs and content.",
+    creations: ["Feature documentation", "User guides", "SEO blog articles"]
   },
   {
     name: "Location Weather",
-    description: "Highly customizable weather widget plugin to showcase real-time weather alerts and details.",
-    creations: ["SEO blog articles", "Feature-focused content", "Educational guides", "User-focused explanations"]
+    description: "Customizable weather widget plugin.",
+    creations: ["Feature documentation", "User guides", "SEO blog articles"]
   },
   {
     name: "WooGallery",
-    description: "A premium product gallery slider for WooCommerce to display product images from multiple angles.",
-    creations: ["SEO blog articles", "Feature-focused content", "Educational guides", "User-focused explanations"]
+    description: "Product gallery slider for WooCommerce.",
+    creations: ["Feature documentation", "User guides", "SEO blog articles"]
   }
 ];
 
 export const techDocs: TechDocItem[] = [
   {
-    pluginName: "Easy Accordion",
-    topics: ["Setup guides", "Feature explanations", "User instructions"]
-  },
-  {
-    pluginName: "Smart Post",
-    topics: ["Block usage guides", "Feature documentation", "Configuration help"]
-  },
-  {
-    pluginName: "Location Weather",
-    topics: ["Sun & Moon times", "Weather setup guides", "Widget integration docs", "Historical weather documentation"]
+    pluginName: "Documentation Systems",
+    topics: ["User guides", "Knowledge base articles", "Feature documentation", "API documentation"]
   }
 ];
 
 export const aiWorkflowSteps: AIWorkflowStep[] = [
   {
     phase: "01",
-    title: "Brainstorming & Prompting",
-    items: ["Ideation generation", "Outline framing", "Prompt optimization"]
+    title: "Brainstorming",
+    items: ["Content brainstorming", "Topic generation"]
   },
   {
     phase: "02",
-    title: "Drafting & Structuring",
-    items: ["AI-assisted rough draft", "Information hierarchy structure", "Technical term checks"]
+    title: "Structuring",
+    items: ["Draft structuring", "SEO optimization"]
   },
   {
     phase: "03",
-    title: "Human Editing & Polish",
-    items: ["Deep stylistic editing", "Brand tone alignment", "Meticulous grammar audit"]
+    title: "Editing",
+    items: ["Editing assistance", "Refinement"]
   },
   {
     phase: "04",
-    title: "Quality Validation",
-    items: ["SEO check & optimization", "Fact verification", "Readability verification"]
+    title: "Validation",
+    items: ["Quality validation", "Manual review before delivery"]
   }
 ];
 
 export const testimonialsData: TestimonialItem[] = [
-  { highlight: "Clear communication & fast delivery", description: "Consistently meets tight deadlines while maintaining transparent and prompt updates." },
-  { highlight: "High-quality & professional writing", description: "Delivers clean, engaging, and well-researched pieces suitable for highly demanding audiences." },
-  { highlight: "Strong understanding of requirements", description: "Grasps complex guidelines quickly and implements them accurately with minimal back-and-forth." },
-  { highlight: "Reliable & consistent performance", description: "A trusted content partner who delivers outstanding work over long-term projects." },
-  { highlight: "Ability to match brand tone", description: "Seamlessly adapts language to resonate with tech, casual, or conversion-focused demographics." }
+  { highlight: "Clear communication and fast delivery", description: "" },
+  { highlight: "High-quality and professional writing", description: "" },
+  { highlight: "Strong requirement understanding", description: "" },
+  { highlight: "Reliable and consistent performance", description: "" },
+  { highlight: "Ability to match brand tone", description: "" }
 ];
 
 export const skillsData: SkillCategory[] = [
   {
-    category: "Content Writing",
-    skills: ["SEO Writing", "Copywriting", "Blogging", "Product Descriptions"]
+    category: "Content Writing & Copywriting",
+    skills: ["SEO Writing", "Blog Writing", "Website Copy", "Landing Pages", "Product Descriptions"]
   },
   {
     category: "Technical Writing",
-    skills: ["Documentation", "User Guides", "Feature Writing", "Information Design"]
+    skills: ["Documentation", "User Guides", "API Documentation", "Knowledge Base", "SOP Writing"]
   },
   {
-    category: "E-commerce",
-    skills: ["Shopify", "WooCommerce", "Etsy", "Amazon Content", "Product Landing Pages"]
+    category: "SaaS & WordPress Content",
+    skills: ["Plugin Documentation", "Feature Writing", "SaaS Copywriting", "UX Writing"]
   },
   {
-    category: "AI Tools",
-    skills: ["Prompting", "Editing", "Content Evaluation", "Workflow Optimization"]
+    category: "E-commerce Content",
+    skills: ["Shopify", "WooCommerce", "Etsy", "Amazon Listings", "Conversion Copy"]
+  },
+  {
+    category: "AI Content Systems",
+    skills: ["Prompt Engineering", "Content Structuring", "Editing Workflows", "Content Optimization"]
   }
 ];
 
 export const contactDetails: ContactInfo = {
-  email: "yousuf.ali.writer@gmail.com",
-  linkedin: "https://linkedin.com/in/yousufali-writer",
-  portfolio: "https://yousufali.com",
-  fiverr: "https://fiverr.com/yousufali_writer"
+  email: "[Your Email]",
+  linkedin: "[Your LinkedIn]",
+  portfolio: "[Your Website]",
+  fiverr: "[Your Profile]"
 };
