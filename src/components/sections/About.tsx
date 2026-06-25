@@ -3,10 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
-import { aboutData, statsData } from '../../data/content';
+import { aboutData, contactDetails } from '../../data/content';
 
 export function About() {
-  const { intro, story1, story2, story3 } = aboutData;
+  const { intro, body, stats } = aboutData;
 
   return (
     <section id="about" className="py-24 px-6 lg:px-8 relative overflow-hidden bg-background">
@@ -22,7 +22,7 @@ export function About() {
             viewport={{ once: true }}
             className="text-3xl font-black tracking-tight text-foreground sm:text-5xl uppercase"
           >
-            Delivering Long-Term Results <br/><span className="text-primary">Through Structured Content</span>
+            Turning Content <br/><span className="text-primary">Into Revenue</span>
           </motion.h2>
         </div>
 
@@ -39,23 +39,17 @@ export function About() {
               {intro}
             </p>
             <div className="space-y-4 pt-4 text-foreground-secondary/90 text-left">
-              <p>{story1}</p>
-              <p>{story2}</p>
-              {story3 && (
-                <p className="p-4 rounded-xl bg-surface/50 border border-white/5 font-bold text-xs sm:text-sm text-foreground">
-                  ✨ {story3}
-                </p>
-              )}
+              <p>{body}</p>
             </div>
             <div className="pt-6 flex flex-wrap justify-center md:justify-start gap-4">
               <a href="#contact">
                 <Button variant="primary" className="!rounded-lg !px-6 !py-3 !text-sm font-bold uppercase tracking-wider">
-                  Hire Yousuf
+                  Hire Me
                 </Button>
               </a>
-              <a href="#featured-work">
+              <a href={contactDetails.resume} target="_blank" rel="noopener noreferrer">
                 <Button variant="secondary" className="!rounded-lg !px-6 !py-3 !text-sm font-bold uppercase tracking-wider">
-                  Explore Portfolio
+                  Download Resume
                 </Button>
               </a>
             </div>
@@ -63,7 +57,7 @@ export function About() {
           
           {/* Stats Grid Column */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full">
-            {statsData.map((stat, idx) => (
+            {stats.map((stat, idx) => (
               <motion.div 
                 key={idx} 
                 initial={{ opacity: 0, y: 20 }}
