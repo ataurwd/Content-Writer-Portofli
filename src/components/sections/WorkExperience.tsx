@@ -6,7 +6,7 @@ import { workExperienceData } from '../../data/content';
 
 export function WorkExperience() {
   return (
-    <section id="experience" className="py-24 px-6 lg:px-8 relative overflow-hidden bg-surface/30">
+    <section id="experience" className="py-24 px-6 lg:px-8 relative overflow-hidden light-section-alt border-t border-slate-100">
       <div className="max-w-4xl mx-auto z-10 relative">
         <div className="text-center md:text-left mb-16">
           <motion.h2 

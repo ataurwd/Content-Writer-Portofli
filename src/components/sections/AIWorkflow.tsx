@@ -6,7 +6,7 @@ import { aiWorkflowSteps } from '../../data/content';
 
 export function AIWorkflow() {
   return (
-    <section id="ai-workflow" className="py-24 px-6 lg:px-8 relative bg-background">
+    <section id="ai-workflow" className="py-24 px-6 lg:px-8 relative light-section">
       <div className="max-w-7xl mx-auto z-10 relative">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <motion.h2 

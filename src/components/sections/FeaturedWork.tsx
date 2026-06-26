@@ -6,7 +6,7 @@ import { featuredWorkData } from '../../data/content';
 
 export function FeaturedWork() {
   return (
-    <section id="featured-work" className="py-24 px-6 lg:px-8 relative bg-background">
+    <section id="featured-work" className="py-24 px-6 lg:px-8 relative light-section border-t border-slate-100">
       <div className="max-w-7xl mx-auto z-10 relative space-y-24">
         
         {/* Section Heading */}

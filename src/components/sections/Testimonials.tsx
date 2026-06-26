@@ -7,7 +7,7 @@ import { testimonialsData, contactDetails } from '../../data/content';
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 px-6 lg:px-8 relative bg-surface/30 border-y border-white/5">
+    <section id="testimonials" className="py-24 px-6 lg:px-8 relative light-section-alt border-y border-slate-100">
       <div className="max-w-7xl mx-auto z-10 relative">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <motion.h2 

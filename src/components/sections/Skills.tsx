@@ -6,7 +6,7 @@ import { skillsData, toolsData } from '../../data/content';
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 px-6 lg:px-8 relative bg-surface/30 border-y border-white/5">
+    <section id="skills" className="py-24 px-6 lg:px-8 relative light-section-alt border-y border-slate-100">
       <div className="max-w-7xl mx-auto z-10 relative">
         <div className="text-center mb-16">
           <motion.h2 

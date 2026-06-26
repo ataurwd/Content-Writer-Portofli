@@ -9,7 +9,7 @@ export function About() {
   const { intro, body } = aboutData;
 
   return (
-    <section id="about" className="py-24 px-6 lg:px-8 relative overflow-hidden bg-background">
+    <section id="about" className="py-24 px-6 lg:px-8 relative overflow-hidden light-section">
       
       <div className="absolute top-1/3 left-10 w-40 h-40 rounded-full bg-secondary/10 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full bg-accent/10 blur-[120px] pointer-events-none" />
