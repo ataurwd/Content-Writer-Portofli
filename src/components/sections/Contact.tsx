@@ -43,24 +43,50 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <a href={contactDetails.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-xl bg-surface/50 border border-white/5 hover:bg-white/10 transition-colors text-foreground-secondary hover:text-foreground text-sm font-medium">
-                <span className="text-primary">in</span> LinkedIn
+            <div className="space-y-4 pt-6 border-t border-white/10">
+              <a href={`mailto:${contactDetails.email}`} className="flex items-center gap-4 p-4 rounded-2xl glass-panel hover:glass-panel-hover transition-all group">
+                <div className="w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-foreground-secondary uppercase tracking-wider">Email</div>
+                  <div className="text-sm sm:text-base font-bold text-foreground mt-0.5 group-hover:text-primary transition-colors">{contactDetails.email}</div>
+                </div>
               </a>
-              <a href={contactDetails.fiverr} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-xl bg-surface/50 border border-white/5 hover:bg-white/10 transition-colors text-foreground-secondary hover:text-foreground text-sm font-medium">
-                <span className="text-primary">fi</span> Fiverr
+
+              <a href={`https://wa.me/${contactDetails.whatsapp.replace('+', '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-2xl glass-panel hover:glass-panel-hover transition-all group">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-foreground-secondary uppercase tracking-wider">Phone & WhatsApp</div>
+                  <div className="text-sm sm:text-base font-bold text-foreground mt-0.5 group-hover:text-emerald-400 transition-colors">{contactDetails.whatsapp}</div>
+                </div>
               </a>
-              <a href={contactDetails.portfolio} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-xl bg-surface/50 border border-white/5 hover:bg-white/10 transition-colors text-foreground-secondary hover:text-foreground text-sm font-medium">
-                <span className="text-primary">✦</span> Portfolio
+
+              <div className="flex items-center gap-4 p-4 rounded-2xl glass-panel">
+                <div className="w-12 h-12 rounded-xl bg-accent/15 text-accent flex items-center justify-center shrink-0">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-foreground-secondary uppercase tracking-wider">Location</div>
+                  <div className="text-sm sm:text-base font-bold text-foreground mt-0.5">{contactDetails.location}</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 pt-2">
+              <a href={contactDetails.github} target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl glass-panel hover:glass-panel-hover flex items-center justify-center text-foreground-secondary hover:text-foreground transition-all font-bold" title="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               </a>
-              <a href={`mailto:${contactDetails.email}`} className="flex items-center gap-3 p-3 rounded-xl bg-surface/50 border border-white/5 hover:bg-white/10 transition-colors text-foreground-secondary hover:text-foreground text-sm font-medium">
-                <span className="text-primary">@</span> Email
+              <a href={contactDetails.linkedin} target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl glass-panel hover:glass-panel-hover flex items-center justify-center text-foreground-secondary hover:text-[#0A66C2] transition-all font-bold" title="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
               </a>
-              <a href={`https://wa.me/${contactDetails.whatsapp.replace('+', '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-xl bg-surface/50 border border-white/5 hover:bg-white/10 transition-colors text-foreground-secondary hover:text-foreground text-sm font-medium">
-                <span className="text-emerald-400">wa</span> WhatsApp
+              <a href={contactDetails.fiverr} target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl glass-panel hover:glass-panel-hover flex items-center justify-center text-foreground-secondary hover:text-emerald-400 transition-all font-black text-sm" title="Fiverr">
+                fi
               </a>
-              <a href={contactDetails.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-xl bg-surface/50 border border-white/5 hover:bg-white/10 transition-colors text-foreground-secondary hover:text-foreground text-sm font-medium">
-                <span className="text-primary">&lt;/&gt;</span> GitHub
+              <a href={contactDetails.portfolio} target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl glass-panel hover:glass-panel-hover flex items-center justify-center text-foreground-secondary hover:text-accent transition-all font-black text-sm" title="Portfolio">
+                ✦
               </a>
             </div>
             

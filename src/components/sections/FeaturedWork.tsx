@@ -17,7 +17,7 @@ export function FeaturedWork() {
             viewport={{ once: true }}
             className="text-3xl font-black tracking-tight text-foreground sm:text-5xl uppercase"
           >
-            Featured <span className="text-primary">Work</span>
+            Featured Work & <span className="text-primary">Projects</span>
           </motion.h2>
         </div>
 
@@ -77,11 +77,8 @@ export function FeaturedWork() {
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredWorkData.wordpressSaaS.map((project, idx) => (
-              <motion.a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
+            {featuredWorkData.wordpressSaaS.map((project: any, idx) => (
+              <motion.div
                 key={project.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -89,22 +86,47 @@ export function FeaturedWork() {
                 transition={{ delay: idx * 0.1 }}
                 className="glass-panel p-6 flex flex-col hover:glass-panel-hover group"
               >
-                <h4 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{project.name}</h4>
-                <div className="text-xs font-medium text-foreground-secondary/80 mb-4 bg-white/5 inline-block px-2 py-1 rounded border border-white/5">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-fit">
+                  <h4 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{project.name}</h4>
+                </a>
+                <div className="text-xs font-medium text-foreground-secondary/80 mb-4 bg-white/5 inline-block px-2.5 py-1 rounded border border-white/5 w-fit">
                   {project.role}
                 </div>
-                <ul className="space-y-2 mt-auto text-sm text-foreground-secondary/90 mb-4">
-                  {project.deliverables.map((item, i) => (
+                <ul className="space-y-2 text-sm text-foreground-secondary/90 mb-4">
+                  {project.deliverables.map((item: string, i: number) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-primary mt-0.5">▹</span>
-                      <span className={item.includes("3 Selected") ? "font-bold text-foreground" : ""}>{item}</span>
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-auto pt-4 border-t border-white/10 text-xs font-bold text-accent uppercase tracking-wider group-hover:underline">
-                  View Author Profile →
+
+                <div className="space-y-2 my-4 pt-3 border-t border-white/5">
+                  <p className="text-[11px] font-bold text-foreground-secondary uppercase tracking-wider">Featured Articles:</p>
+                  {project.articles?.map((art: any, aIdx: number) => (
+                    <a
+                      key={aIdx}
+                      href={art.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-xs text-primary/90 hover:text-primary hover:underline line-clamp-1 flex items-center gap-1.5 transition-colors"
+                    >
+                      <span className="shrink-0">↗</span>
+                      <span className="truncate">{art.title}</span>
+                    </a>
+                  ))}
                 </div>
-              </motion.a>
+
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto pt-4 border-t border-white/10 text-xs font-bold text-accent uppercase tracking-wider hover:underline inline-flex items-center gap-1"
+                >
+                  <span>View Author Profile</span>
+                  <span>→</span>
+                </a>
+              </motion.div>
             ))}
           </div>
         </div>

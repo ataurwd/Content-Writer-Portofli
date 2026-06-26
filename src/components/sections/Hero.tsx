@@ -3,10 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
-import { heroData, contactDetails } from '../../data/content';
+import { heroData, aboutData, contactDetails } from '../../data/content';
 
 export function Hero() {
-  const { name, tagline, title1, title2, description, roles, highlights } = heroData;
+  const { name, tagline, title1, title2, description, roles } = heroData;
 
   return (
     <section id="hero" className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 px-6 lg:px-8 overflow-hidden bg-background">
@@ -56,7 +56,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-3 mb-8"
+          className="flex flex-wrap justify-center gap-3 mb-10"
         >
           {roles.map((role, idx) => (
             <div key={idx} className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-semibold text-foreground/90 backdrop-blur-sm">
@@ -65,20 +65,23 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* Stats Row */}
+        {/* Stats Grid */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 mb-12 text-sm md:text-base font-bold text-foreground/80"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full max-w-4xl mb-12"
         >
-          {highlights.map((highlight, idx) => (
-            <React.Fragment key={idx}>
-              <span className="text-accent">{highlight}</span>
-              {idx !== highlights.length - 1 && (
-                <span className="hidden sm:inline-block text-white/20">•</span>
-              )}
-            </React.Fragment>
+          {aboutData.stats.map((stat, idx) => (
+            <div 
+              key={idx} 
+              className="p-6 sm:p-8 flex flex-col items-center justify-center text-center glass-panel hover:border-primary/40 transition-all shadow-xl hover:shadow-primary/10 group"
+            >
+              <div className="text-3xl sm:text-4xl font-black text-primary tracking-tight mb-1 group-hover:scale-105 transition-transform">
+                {stat.value}{stat.suffix}
+              </div>
+              <h3 className="text-[10px] sm:text-xs font-bold text-foreground-secondary uppercase tracking-widest">{stat.label}</h3>
+            </div>
           ))}
         </motion.div>
 

@@ -6,6 +6,7 @@ export interface ContactInfo {
   whatsapp: string;
   resume: string;
   github: string;
+  location: string;
 }
 
 export const heroData = {
@@ -121,28 +122,48 @@ export const featuredWorkData = {
       id: "smartpost",
       name: "Smart Post",
       role: "Content Writer & Technical Content Writer",
-      deliverables: ["SEO Blog Articles", "Feature-Focused Content", "Product Education", "User-Focused Tutorials", "3 Selected Blog Articles"],
+      deliverables: ["SEO Blog Articles", "Feature-Focused Content", "Product Education", "User-Focused Tutorials"],
+      articles: [
+        { title: "How to Add Taxonomy Image & Color in WordPress", url: "https://wpsmartpost.com/how-to-add-taxonomy-image-color-in-wordpress/" },
+        { title: "How to Display Custom Taxonomy in WordPress", url: "https://wpsmartpost.com/how-to-display-custom-taxonomy-in-wordpress/" },
+        { title: "Smart Post 3.3.0: Smart Blocks & Flexible Modules", url: "https://wpsmartpost.com/smart-post-3-3-0-powerful-blocks-flexible-modules-250-ready-made-patterns/" }
+      ],
       link: "https://wpsmartpost.com/author/yousuf/"
     },
     {
       id: "wptabs",
       name: "WP Tabs",
       role: "Content Writer",
-      deliverables: ["Educational Content", "Feature Tutorials", "Product Guides", "3 Selected Blog Articles"],
+      deliverables: ["Educational Content", "Feature Tutorials", "Product Guides"],
+      articles: [
+        { title: "WP Tabs is Now Smart Tabs (3.0.0): Smarter Product Tabs", url: "https://shapedplugin.com/smart-custom-product-tabs-for-woocommerce/" },
+        { title: "How to Create Custom WooCommerce Product Tabs", url: "https://wptabs.com/author/yousuf/" },
+        { title: "Smarter Product Tabs for Higher Conversions", url: "https://wptabs.com/author/yousuf/" }
+      ],
       link: "https://wptabs.com/author/yousuf/"
     },
     {
       id: "locationweather",
       name: "Location Weather",
       role: "Content Writer & Technical Content Writer",
-      deliverables: ["Feature Content", "Tutorials", "Educational Resources", "3 Selected Blog Articles"],
+      deliverables: ["Feature Content", "Tutorials", "Educational Resources"],
+      articles: [
+        { title: "Location Weather 3.3.0: Visual Gutenberg Forecast Blocks", url: "https://shapedplugin.com/location-weather-3-3-0-released-all-new-visual-gutenberg-weather-forecast-blocks-for-wordpress/" },
+        { title: "Create Reusable Weather Blocks with Patterns", url: "https://locationweather.io/docs/how-to-create-reusable-weather-blocks-with-wordpress-patterns/" },
+        { title: "Display Real-Time Detailed Weather Updates", url: "https://locationweather.io/display-real-time-detailed-weather-updates/" }
+      ],
       link: "https://locationweather.io/author/yousuf/"
     },
     {
       id: "shapedplugin",
       name: "ShapedPlugin",
       role: "Content Writer",
-      deliverables: ["WordPress Tutorials", "Product Marketing Content", "Educational Blog Articles", "3 Selected Blog Articles"],
+      deliverables: ["WordPress Tutorials", "Product Marketing Content", "Educational Blog Articles"],
+      articles: [
+        { title: "Introducing AI FAQs Generator: Create FAQs With AI", url: "https://shapedplugin.com/introducing-ai-faqs-generator-create-faq-sections-with-ai/" },
+        { title: "Create a Testimonial Grid with AJAX Filters", url: "https://shapedplugin.com/create-testimonial-grid-with-ajax-live-filters-in-wordpress/" },
+        { title: "How to Organize Customer Reviews in WordPress", url: "https://shapedplugin.com/how-to-organize-customer-reviews-in-wordpress/" }
+      ],
       link: "https://shapedplugin.com/author/yousuf/"
     }
   ],
@@ -304,5 +325,6 @@ export const contactDetails: ContactInfo = {
   portfolio: "https://www.fiverr.com/users/shopify_pro49/portfolio/",
   whatsapp: "+8801516338379",
   resume: "https://drive.google.com/file/d/1A7HAF8EjQkMonls2vXuzabEk5K2ujDY8/view?usp=drivesdk",
-  github: "https://github.com/yousufwriter"
+  github: "https://github.com/yousufwriter",
+  location: "Dhaka, Bangladesh"
 };
