@@ -14,7 +14,7 @@ export const heroData = {
  tagline: "✦ Write. Connect. Engage. Convert.",
  title1: "Hi, I'm Yousuf Ali,",
  title2: "Senior Content Strategist",
- roles: ["AI Content Specialist", "Technical Writer", "SEO Blogger", "Marketing Strategist"],
+ roles: ["AI Content Specialist", "Technical Writer", "Marketing Strategist"],
  description: "Specialized in Copywriting (5+), AI Driven Content Writing & Training (3+), Blogging (2+), and Technical Writing (1+), creating high-impact content that drives engagement, strengthens brands, and supports business growth.",
  highlights: [
    "5+ Years Experience",
